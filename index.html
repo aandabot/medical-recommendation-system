@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Medical Health Advisor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #2CB9B0;
+            --navy: #0A2342;
+            --gray: #F8F9FA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--teal), var(--navy));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            background: var(--teal);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem 0;
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 4rem 2rem;
+            background: var(--gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Interactive Demo */
+        .demo {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .chat-widget {
+            max-width: 400px;
+            margin: 2rem auto;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 1rem;
+        }
+
+        .chat-message {
+            background: var(--gray);
+            padding: 0.8rem;
+            margin: 0.5rem;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        /* How It Works */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 2rem;
+        }
+
+        .timeline-step {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .timeline-circle {
+            width: 40px;
+            height: 40px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your AI-Powered Personal Health Guide</h1>
+            <p>Get tailored medical advice based on your symptoms, history, and lifestyle.</p>
+            <button class="cta-button">Start Your Health Journey →</button>
+            <small>100% Secure · HIPAA & GDPR Compliant</small>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🔍 Symptom Analysis</h3>
+                <p>Input symptoms and get instant insights into potential conditions.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎯 Personalized Care</h3>
+                <p>Recommendations tailored to your medical history and lifestyle.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🛡️ Risk Prevention</h3>
+                <p>Predict and prevent future health risks with AI-driven analytics.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📍 Pharmacy Locator</h3>
+                <p>Find nearby pharmacies for your prescribed medications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="demo">
+        <h2>Try Our Symptom Checker</h2>
+        
+<div class="chat-widget">
+    <form id="symptomForm">
+        <label for="symptom">Enter Symptom:</label><br><br>
+        <input type="text" id="symptom" name="symptom" placeholder="e.g., headache" required>
+        <button class="cta-button" type="submit">Get Recommendation</button>
+    </form>
+    <div id="response" class="chat-message"></div>
+</div>
+
+            <div class="chat-message">PMHA: How can I help you today?</div>
+            <div class="chat-message user">User: I have a headache and fever</div>
+            <div class="chat-message">PMHA: Consider rest and hydration. Recommended OTC: Ibuprofen</div>
+        </div>
+        <button class="cta-button">Try Our Symptom Checker →</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>PMHA</h4>
+                <p>Empowering Healthier Lives</p>
+            </div>
+            <div>
+                <h4>Links</h4>
+                <ul>
+                    <li>About</li>
+                    <li>Features</li>
+                    <li>Privacy</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>support@pmha.com</p>
+                <div class="social-icons">
+                    <span>🐦</span>
+                    <span>🔗</span>
+                    <span>📘</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Chat Interaction
+
+document.getElementById('symptomForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const symptom = document.getElementById('symptom').value;
+
+    const res = await fetch('/recommend', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `symptom=${symptom}`
+    });
+
+    const data = await res.json();
+    document.getElementById('response').innerText = "PMHA: Recommended medicine - " + data.recommendation;
+});
+
+        document.querySelector('.chat-widget').addEventListener('click', function() {
+            const newMessage = document.createElement('div');
+            newMessage.className = 'chat-message';
+            newMessage.textContent = 'PMHA: Would you like more details?';
+            this.appendChild(newMessage);
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
